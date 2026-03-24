@@ -18,4 +18,5 @@ public class AzureSqlConfig {
     public DataSource dataSource() {
         return DataSourceBuilder.create().build();
     }
+    
 }
