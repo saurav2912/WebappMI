@@ -103,19 +103,6 @@ public class AzureManagedIdentityAccessTokenCallbackAzure
         sqlServerDataSource.setHostNameInCertificate("*.database.windows.net");
         sqlServerDataSource.setLoginTimeout(30);
 
-        // Wrap in HikariCP for connection pooling
-       /* HikariConfig hikariConfig = new HikariConfig();
-        hikariConfig.setDataSource(sqlServerDataSource);
-        hikariConfig.setMaximumPoolSize(10);
-        hikariConfig.setMinimumIdle(2);
-        hikariConfig.setConnectionTimeout(30_000);
-        hikariConfig.setIdleTimeout(600_000);
-        hikariConfig.setMaxLifetime(1_800_000);
-
-        // Validate connection on borrow
-        hikariConfig.setConnectionTestQuery("SELECT 1");
-
-        return new HikariDataSource(hikariConfig);*/
         return sqlServerDataSource;
     }
 }
