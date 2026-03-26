@@ -5,6 +5,7 @@ import com.azure.core.credential.TokenRequestContext;
 import com.azure.identity.DefaultAzureCredentialBuilder;
 import com.microsoft.sqlserver.jdbc.SQLServerAccessTokenCallback;
 import com.microsoft.sqlserver.jdbc.SqlAuthenticationToken;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
 import java.util.logging.Logger;
@@ -20,6 +21,7 @@ import java.util.logging.Logger;
  * NOTE: The class MUST have a public no-arg constructor — the JDBC driver
  *       instantiates it reflectively via the accessTokenCallbackClass connection property.
  */
+@Configuration
 @Profile("local")
 public class AzureManagedIdentityAccessTokenCallback implements SQLServerAccessTokenCallback {
 
