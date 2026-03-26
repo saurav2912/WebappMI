@@ -5,15 +5,17 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.io.Serializable;
+
 @Entity
 @Table(name="Student")
 @Getter
 @Setter
 @NoArgsConstructor
-public class Student {
+public class Student implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private String id;
+    private int id;
     @Column(name = "FirstName")
     private String fname;
     @Column(name = "LastName")
