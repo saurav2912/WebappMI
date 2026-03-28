@@ -4,10 +4,7 @@ import com.saurav.azure.WebappMI.entity.Student;
 import com.saurav.azure.WebappMI.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -41,5 +38,18 @@ public class StudentController {
         }
 
         return ResponseEntity.ok(students);
+    }
+
+    @GetMapping("/student/{id}")
+    public ResponseEntity<Student> getStudentById(@PathVariable("id") String id ) {
+
+        Student student = null;
+        try {
+            student =    repo.findById(id).orElseGet(null);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+
+        return ResponseEntity.ok(student);
     }
 }
