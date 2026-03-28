@@ -58,7 +58,6 @@
             <version>1.18.2</version>
             <scope>compile</scope>
         </dependency>
-
         <dependency>
             <groupId>com.azure</groupId>
             <artifactId>azure-core</artifactId>
