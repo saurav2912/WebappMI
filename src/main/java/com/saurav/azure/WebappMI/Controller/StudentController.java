@@ -30,7 +30,7 @@ public class StudentController {
 
         return ResponseEntity.ok(message);
     }
-    
+
     @GetMapping("/students")
     public ResponseEntity<List<Student>> getAllStudent() {
         List<Student> students = null;
