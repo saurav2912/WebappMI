@@ -46,6 +46,10 @@ jobs:
         with:
           name: java-app
       
+      - name: Login to Azure
+        uses: azure/login@v2
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
@@ -54,5 +58,4 @@ jobs:
           app-name: 'smpWebappMI'
           slot-name: 'Production'
           package: '*.jar'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_D67F5F65E8374B2BB79D8D3E81CAA06F }}
           
