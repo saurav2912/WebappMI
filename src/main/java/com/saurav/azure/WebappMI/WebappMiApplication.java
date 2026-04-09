@@ -32,5 +32,4 @@ public class WebappMiApplication {
 
         return http.build();
     }
-
 }
